@@ -1,3 +1,4 @@
+//import libraries
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -11,7 +12,8 @@ public class Counter implements ActionListener {
   int leftCount;
   int rightCount;
 
-  //Counter  Constructor Creation
+
+  //create cunstructor for  counter
  Counter() {
    //set frame
    JFrame frame = new JFrame("Let's Count");
@@ -26,17 +28,19 @@ public class Counter implements ActionListener {
 
    leftButton.addActionListener(this);
    rightButton.addActionListener(this);
-
+    //initialize Count Variables
    int leftCount = 0;
    int rightCount = 0;
 
-
+    //add  buttons to frame
    frame.add(leftButton);
    frame.add(rightButton);
 
+   //initialize instance variables
    leftLabel = new JLabel ("Count: " +leftCount);
    rightLabel = new JLabel ("Count: "+rightCount);
    
+   //add labels to the frame
    frame.add(leftLabel);
    frame.add(rightLabel);
 
@@ -51,18 +55,22 @@ public class Counter implements ActionListener {
 
     public void actionPerformed(ActionEvent ae) {
       if(ae.getActionCommand().equals("Left")){
-        leftCount++;
+        //could also write as leftCount++
+        leftCount = leftCount+ 1;
+       //set leftLabel to be the string "Count :" + the value of leftCount 
         leftLabel.setText("Count: " + leftCount);
       }
 
       else if(ae.getActionCommand().equals("Right")){
-        rightCount++;
+        rightCount = rightCount +1;
+        //set rightLabel to be the string "Count :" + the value of rightCount 
         rightLabel.setText("Count: " + rightCount);
       }
 
       else {
         rightCount = 0;
         leftCount = 0;
+        //set left & right  labels  to  be the string "Count: " + the value of each respective count
         leftLabel.setText("Count: " + leftCount);
         rightLabel.setText("Count: " +rightCount);
       }
