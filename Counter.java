@@ -15,8 +15,9 @@ public class Counter implements ActionListener {
 
   //create cunstructor for  counter
  Counter() {
-   //set frame
+   //declare & initialize frame
    JFrame frame = new JFrame("Let's Count");
+   //set layout to flow layout
    frame.setLayout(new FlowLayout());
    
     //set size of frame
